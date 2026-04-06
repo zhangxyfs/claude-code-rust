@@ -76,11 +76,16 @@ impl Cli {
     }
 
     fn print_system_info(&self) {
-        println!("System Information:");
-        println!("  Version: {}", env!("CARGO_PKG_VERSION"));
-        println!("  OS: {}", std::env::consts::OS);
-        println!("  Arch: {}", std::env::consts::ARCH);
-        println!("  Working Dir: {}", std::env::current_dir().unwrap().display());
+        use colored::Colorize;
+
+        println!();
+        println!("  {}", "System Information".truecolor(147, 112, 219).bold());
+        println!();
+        println!("  {:20} {}", "Version:", env!("CARGO_PKG_VERSION").green());
+        println!("  {:20} {}", "OS:", std::env::consts::OS.cyan());
+        println!("  {:20} {}", "Architecture:", std::env::consts::ARCH.cyan());
+        println!("  {:20} {}", "Working Directory:", std::env::current_dir().unwrap().display().to_string().bright_white());
+        println!();
     }
 
     fn run_repl(&self, state: crate::state::AppState, prompt: Option<String>) -> anyhow::Result<()> {

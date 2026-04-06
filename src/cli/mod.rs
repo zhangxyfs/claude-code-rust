@@ -3,6 +3,7 @@
 pub mod args;
 pub mod commands;
 pub mod repl;
+pub mod ui;
 
 pub use args::Cli;
 pub use repl::Repl;

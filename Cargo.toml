@@ -77,6 +77,9 @@ similar = "2.5"
 pulldown-cmark = "0.10"
 syntect = { version = "5.2", default-features = false, features = ["default-themes", "default-syntaxes", "regex-onig"] }
 
+# Terminal utilities
+terminal_size = "0.3"
+
 # File operations
 fs_extra = "1.3"
 
